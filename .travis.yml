@@ -8,6 +8,7 @@ before_install:
 script:
   #Build docker_image
   - docker build -t oscartematio/site_cv ./
+  - docker run oscartematio/site_cv -p 500:5000
   #logging to the docker repository
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin 
   #pushing image to dockerhub
