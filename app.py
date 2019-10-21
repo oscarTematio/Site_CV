@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mail import Mail, Message
+import os 
 
 
 
@@ -11,7 +12,7 @@ app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_DEBUG'] = True
 app.config['MAIL_DEFAULT_SENDER'] = 'oscartematio@gmail.com'
-app.config['MAIL_PASSWORD'] = open("/opt/passgmail", "r").readline()
+app.config['MAIL_PASSWORD'] = os.environ.get('PASS')
 app.config['MAIL_USERNAME'] = 'oscartematio@gmail.com'
 app.config['MAIL_MAX_EMAILS'] = None
 app.config['MAIL_SUPPRESS_SEND'] = False
