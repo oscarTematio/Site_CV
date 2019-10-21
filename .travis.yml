@@ -1,0 +1,19 @@
+sudo: required
+services:
+  - docker
+
+  
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "cv-oscar-miguel"
+  env: "CvOscarMiguel-env" 
+  bucket_name: "elasticbeanstalk-eu-west-3-920198304117"
+  bucket_path: "cv-oscar-miguel"
+  on:
+    branch: master
+  access_key_id: 
+    secure: $ACCESS_KEY_ID
+  secret_access_key:
+    secure: "$SECRET_ACCESS_KEY"
