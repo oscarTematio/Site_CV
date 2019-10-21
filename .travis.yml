@@ -2,7 +2,17 @@ sudo: required
 services:
   - docker
 
-  
+before_install:
+  - docker build -t oscartematio/docker-react -f Dockerfile.dev .
+
+script:
+  #Build docker_image
+  - docker build -t oscartematio/site_cv ./
+  #logging to the docker repository
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
+  #pushing image to dockerhub
+  - docker push oscartematio/site_cv
+   
 
 deploy: 
   provider: elasticbeanstalk
