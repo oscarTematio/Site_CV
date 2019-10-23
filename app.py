@@ -32,10 +32,14 @@ def home():
         message = request.form['message']
         g_message = message + "\n" + "Nom: " + name + " " +  lname  + "\n" + \
             "Email: " + email + "\n" + "Telephone: " + phone_number
+        Answer =  "Bonjour "+name+"," + "\n" + "Votre message m'a bien été envoyé, je vous recontacte dès que j'en ai pris connaissance"+"\n"+"Cordialement"+"\n"+"Oscar Tematio"
         msg = Message(subject, recipients=[
                       'omtematio@gmail.com'], body=g_message)
+        mail_answer=Message("----Reponse Automatique----", recipients=[email],body=Answer)
+        
 
         mail.send(msg)
+        mail.send(mail_answer)
 
         return redirect(url_for('home'))
     return render_template("home.html")
