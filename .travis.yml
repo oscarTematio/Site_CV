@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build  --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv_test -f Dockerfile.dev .
+  - docker build  --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv_test -f Dockerfile.dev ./site_cv
 
 script:
   #Build docker_image
