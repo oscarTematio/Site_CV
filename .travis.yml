@@ -3,11 +3,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t oscartematio/docker-react -f Dockerfile.dev .
+  - docker build -t $DOCKER_ID/docker-react -f Dockerfile.dev .
 
 script:
   #Build docker_image
-  - docker build --build-arg PASSWORD=$MAIL_PASS -t oscartematio/site_cv ./
+  - docker build --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv ./
   
   #logging to the docker repository
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin 
