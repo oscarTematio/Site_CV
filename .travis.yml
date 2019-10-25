@@ -7,7 +7,7 @@ before_install:
 
 script:
   #Build docker_image
-  - docker build --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv ./
+  - docker build --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv ./Docker
   
   #logging to the docker repository 
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin 
