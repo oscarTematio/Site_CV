@@ -3,13 +3,13 @@ services:
   - docker
 
 before_install:
-  - docker build -t $DOCKER_ID/docker-react -f Dockerfile.dev .
+  - docker build  --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv_test -f Dockerfile.dev .
 
 script:
   #Build docker_image
   - docker build --build-arg PASSWORD=$MAIL_PASS -t $DOCKER_ID/site_cv ./
   
-  #logging to the docker repository
+  #logging to the docker repository 
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin 
   
   #pushing image to dockerhub

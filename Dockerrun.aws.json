@@ -1,0 +1,20 @@
+{
+    "AWSEBDockerrunVersion":2,
+    "containerDefinitions": [
+
+        {
+            "name": "cv_osvar",
+            "image":"oscartematio/site_cv",
+            "hostname": "cv_oscar",
+            "essential": true,
+            "portMappings":[
+                {
+                    "hostPort": 500,
+                    "containerPort": 5000
+                }
+            ]
+            
+        }
+    ]
+
+}
