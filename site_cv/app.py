@@ -37,7 +37,7 @@ def home():
                       'omtematio@gmail.com'], body=g_message)
         mail_answer=Message("----DO not Reply----", recipients=[email],body=Answer)
         
-
+        
         mail.send(msg)
         mail.send(mail_answer)
 
