@@ -19,10 +19,10 @@ script:
 deploy: 
   provider: elasticbeanstalk
   region: "eu-west-3"
-  app: "cv-oscar-miguel"
-  env: "CvOscarMiguel-env-1" 
+  app: "cv-oscar-miguel-tematio"
+  env: "CvOscarMiguelTematio-env" 
   bucket_name: "elasticbeanstalk-eu-west-3-920198304117"
-  bucket_path: "cv-oscar-miguel"
+  bucket_path: "cv-oscar-miguel-tematio"
   on:
     branch: master
   access_key_id: 
