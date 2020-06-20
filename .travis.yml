@@ -25,7 +25,5 @@ deploy:
   bucket_path: "cv-oscar-miguel-tematio"
   on:
     branch: master
-  access_key_id: 
-    secure: $ACCESS_KEY_ID
-  secret_access_key:
-    secure: "$SECRET_ACCESS_KEY"
+  access_key_id:  $ACCESS_KEY_ID
+  secret_access_key: "$SECRET_ACCESS_KEY"
